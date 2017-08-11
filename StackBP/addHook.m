@@ -11,7 +11,7 @@ for i = 1:size(hook_map,1)
     hook.f = hook_map{i,2};
     hook.opt = hook_map{i,3};
     if ~isfield(network.hooks, key)
-        network.hooks.(key) = {};
+        network.hooks.(key) = cell(1,0);
     end
     network.hooks.(key) = [network.hooks.(key) hook];
 end
